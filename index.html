@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce</title>
+
+    <link rel="stylesheet" href="./css/home.css">
+</head>
+
+<body>
+    <header class="header">
+
+        <nav>
+            <ul class="nav-menu">
+                <img class="img-logo" src="" alt="Logo e-commerce">
+                <li><a href="#">Home</a></li>
+                <li> <a href="#"> Sobre </a></li>
+            </ul>
+        </nav>
+
+        <aside class="btn-entrar-carrinho">
+            <button id="btn_Entrar" class="btn-entrar" type="submit">
+                Entrar
+            </button>
+            <button id="btn_Carrinho" class="btn-carrinho" type="submit">
+                Carrinho
+            </button>
+        </aside>
+    </header>
+
+    <main>
+
+
+        <section class="desc-loja">
+            <h1> Loja do Severino </h1>
+            <span>Produtos bão e barato </span>
+        </section>
+
+        <section class="card-produtos">
+            <ul class="card-produtos__lista-produtos">
+                <li> 
+                    <img class="imagem" src="./assets/cabo branco.jpg" alt="">
+                    <h3 class="nome-produto">Nome Produto 1 </h3>
+                    <div>
+                        <p class="preco-produto">100,00<br></p>
+                        <button class="btn-add-carrinho" type="button">
+                            Add carrinho
+                    </button>
+                    </div>
+
+                </li>
+                <li> 
+                    <img class="imagem" src="./assets/disjuntor.jpg" alt="">
+                    <h3 class="nome-produto">Nome Produto 2</h3>
+                    <div>
+                        <p class="preco-produto">110,00<br></p>
+                        <button class="btn-add-carrinho" type="button">
+                            Add carrinho
+                    </button>
+                    </div>
+                </li>
+
+                <li> 
+                    <img class="imagem" src="./assets/disjuntor2.jpg" alt="">
+                    <h3 class="nome-produto">Nome Produto 3</h3>
+                    <div>
+                        <p class="preco-produto">120,00<br></p>
+                        <button class="btn-add-carrinho" type="button">
+                            Add carrinho
+                    </button>
+                    </div>
+
+                </li>
+                <li> 
+                    <img class="imagem" src="./assets/disjuntor3.jpg" alt="">
+                    <h3 class="nome-produto">Nome Produto 4</h3>
+                    <div>
+                        <p class="preco-produto">130,00<br></p>
+                        <button class="btn-add-carrinho" type="button">
+                            Add carrinho
+                    </button>
+                    </div>
+                </li>
+                <li> 
+                    <img class="imagem" src="./assets/cabo azul.jpg" alt="">
+                    <h3 class="nome-produto">Nome Produto 5</h3>
+                    <div>
+                        <p class="preco-produto">140,00<br></p>
+                        <button class="btn-add-carrinho" type="button">
+                            Add carrinho
+                    </button>
+                    </div>
+                </li>
+                <li> 
+                    <img class="imagem" src="./assets/cabo branco.jpg" alt="">
+                    <h3 class="nome-produto">Nome Produto 6</h3>
+                    <div>
+                        <p class="preco-produto">150,00<br></p>
+                        <button class="btn-add-carrinho" type="button">
+                            Add carrinho
+                    </button>
+                    </div>
+                </li>
+                <li> 
+                    <img class="imagem" src="./assets/cabo preto.jpg" alt="">
+                    <h3 class="nome-produto">Nome Produto 7</h3>
+                    <div>
+                        <p class="preco-produto">160,00<br></p>
+                        <button class="btn-add-carrinho" type="button">
+                            Add carrinho
+                    </button>
+                    </div>
+                </li>
+                <li> 
+                    <img class="imagem" src="./assets/lampada-led.jpg" alt="">
+                    <h3 class="nome-produto">Nome Produto 8</h3>
+                    <div>
+                        <p class="preco-produto">170,00<br></p>
+                        <button class="btn-add-carrinho" type="button">
+                            Add carrinho
+                    </button>
+                    </div>
+                </li>
+                <li> 
+                    <img class="imagem" src="./assets/led.jpg" alt="">
+                    <h3 class="nome-produto" class="nome-produto">Nome Produto 9</h3>
+                    <div>
+                        <p class="preco-produto">180,00<br></p>
+                        <button class="btn-add-carrinho" type="button">
+                            Add carrinho
+                    </button>
+                    </div>
+                </li>
+        </section>
+        <section class="container normal-section">
+            <h2 class="section-title">Carrinho</h2>
+
+            <table class="cart-table">
+                <thead>
+                    <tr>
+                        <th class="table-head-item first-col">Item</th>
+                        <th class="table-head-item second-col">Preço</th>
+                        <th class="table-head-item third-col">Quantidade</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    
+                </tbody>
+
+                <tfoot>
+                    <tr>
+                        <td colspan="3" class="cart-total-container">
+                            <strong>Total</strong>
+                            <span>R$0,00</span>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+
+            <button type="button" class="purchase-button">Finalizar Compra</button>
+        </section>
+
+    </main>
+
+
+    <aside  class="tela-login">
+        <div id="modal_Login" class="tela-login-modal">
+            <button id="btn_FecharTelaLogin" class="tela-login-modal_fechar"  type="button">
+                x
+            </button>
+            <img class="img-logo-login" src="./assets/icone-login.png" alt="">
+            <input id="inp_EmailLogin" type="text" placeholder="Digite seu email">
+            <input id="inp_EmailSenha" type="text" placeholder="Digite seu senha">
+            <button id="btn_FazerLogin" class="btn-fazerlogin" type="submit">
+                Login
+            </button>
+            <div class="abrir-cadastro-usuario">
+                <label id="lbl_mensagemLogin"></label>
+                <button id="btn_FazerCadastro" class="btn-fazercadastro" type="submit">
+                    Cadastrar
+                </button>
+            </div>
+        </div>
+    </aside>
+    
+
+    <aside  class="tela-cadastro">
+        
+        <form  id="modal_Cadastro"  class="tela-cadastro-modal">
+            <button id="btn_fecharCadastro" class="tela-cadastro-modal_fechar" type="button">
+                x
+            </button>
+
+            <ul class="formulario-cadastro">
+
+                <li>
+                    <label>CPF * </label>
+                    <input id="inp_CPF" class="input-form" type="text" placeholder="Digite seu CPF">
+                </li>
+
+                <li>
+                    <label>Nome * </label>
+                    <input id="inp_Nome"   class="input-form" type="text" placeholder="Digite seu nome">
+                </li>
+
+                <li>
+                    <label>Endereço * </label>
+                    <input id="inp_Endereco"  class="input-form" type="text" placeholder="Digite seu endereço">
+                </li>
+
+                <li>
+                    <label>Número Telefone * </label>
+                    <input id="inp_Telefone"  class="input-form" type="text" placeholder="Digite seu telefone">
+                </li>
+                <li>
+                    <label>Data Nascimento * </label>
+                    <input id="inp_DataNasc"  class="input-form" type="text" placeholder="Digite sua data nascimento">
+
+                </li>
+                <li>
+                    <label>Email * </label>
+                    <input id="inp_CadastroEmail"  class="input-form" type="text" placeholder="Digite seu email">
+                </li>
+                <li>
+                    <label>Senha * </label>
+                    <input id="inp_CadastroSenha"  class="input-form" type="text" placeholder="Digite sua senha">
+                </li>
+
+            </ul>
+
+            <div class="cadastrar-usuario">
+               
+                <button id="btn_EnviarCadastro" class="btn-enviar-cadastro" type="button">
+                    Cadastrar
+                </button>
+                <label> preeencher todos dados</label>
+            </div>
+            
+        </form>
+       
+        
+    </aside>
+
+
+
+    <script src="./js/login.js"></script>
+    <script src="./js/carrinho.js"></script>
+</body>
+
+<footer class="footer">
+    <h3>Loja do severino</h3>
+</footer>
+
+</html>
