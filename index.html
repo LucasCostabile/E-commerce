@@ -14,19 +14,30 @@
 
         <nav>
             <ul class="nav-menu">
-                <img class="img-logo" src="" alt="Logo e-commerce">
+                <img class="img-logo" src="./assets/logo eletrica.png" alt="Logo e-commerce">
                 <li><a href="#">Home</a></li>
                 <li> <a href="#"> Sobre </a></li>
-            </ul>
+                <li class="nav-item dropdown">
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a href="#!">Produtos</a></li>
+                       </ul>
+                </ul>
+          
         </nav>
-
+        <a Id="user"></a>
         <aside class="btn-entrar-carrinho">
             <button id="btn_Entrar" class="btn-entrar" type="submit">
-                Entrar
+                <a>Entrar</a>
+                <img  class="icon-button" src="./assets/icon-login.png">
             </button>
-            <button id="btn_Carrinho" class="btn-carrinho" type="submit">
-                Carrinho
-            </button>
+           
+                <a href="carrinho.html">
+                    <button id="btn_Carrinho" class="btn-carrinho" type="submit">
+                        <img  class="icon-button" src="./assets/icon_carrinho.svg">
+                        Carrinho
+                    </button>
+                </a></li>
+               
         </aside>
     </header>
 
@@ -41,10 +52,35 @@
         <section class="card-produtos">
             <ul class="card-produtos__lista-produtos">
                 <li> 
-                    <img class="imagem" src="./assets/cabo branco.jpg" alt="">
-                    <h3 class="nome-produto">Nome Produto 1 </h3>
+                    <img class="imagem" src="./assets/cabo branco.png" alt="">
+                    <h3 class="nome-produto">Cabo Flexível Branco 4mm </h3>
                     <div>
-                        <p class="preco-produto">100,00<br></p>
+                        <p class="preco-produto">R$ 180,00<br></p>
+                        <button class="btn-add-carrinho" type="button">
+                            Add carrinho
+                    </button>
+                    
+                    </div>
+                    <a> Produto Adiconado ao carrinho</a>
+
+                </li>
+                <li> 
+                    <img class="imagem" src="./assets/disjuntor_bipolar.png" alt="">
+                    <h3 class="nome-produto">Disjuntor Bipolar 20a 380VCA</h3>
+                    <div>
+                        <p class="preco-produto">R$ 35,50<br></p>
+                        <button class="btn-add-carrinho" type="button">
+                            Add carrinho
+                    </button>
+                    </div>
+                </li>
+
+                <li> 
+                    <img class="imagem" src="./assets/disjuntor_monopolar.png" alt="">
+                    <h3 class="nome-produto">Disjuntor Monopolar 10a 220VCA</h3>
+                    
+                    <div>
+                        <p class="preco-produto">R$ 9,80<br></p>
                         <button class="btn-add-carrinho" type="button">
                             Add carrinho
                     </button>
@@ -52,88 +88,68 @@
 
                 </li>
                 <li> 
-                    <img class="imagem" src="./assets/disjuntor.jpg" alt="">
-                    <h3 class="nome-produto">Nome Produto 2</h3>
+                    <img class="imagem" src="./assets/disjuntor_tripolar.png" alt="">
+                    <h3 class="nome-produto">Disjuntor Tripolar  60a 400VCA</h3>
                     <div>
-                        <p class="preco-produto">110,00<br></p>
-                        <button class="btn-add-carrinho" type="button">
-                            Add carrinho
-                    </button>
-                    </div>
-                </li>
-
-                <li> 
-                    <img class="imagem" src="./assets/disjuntor2.jpg" alt="">
-                    <h3 class="nome-produto">Nome Produto 3</h3>
-                    <div>
-                        <p class="preco-produto">120,00<br></p>
-                        <button class="btn-add-carrinho" type="button">
-                            Add carrinho
-                    </button>
-                    </div>
-
-                </li>
-                <li> 
-                    <img class="imagem" src="./assets/disjuntor3.jpg" alt="">
-                    <h3 class="nome-produto">Nome Produto 4</h3>
-                    <div>
-                        <p class="preco-produto">130,00<br></p>
+                        <p class="preco-produto">R$ 65,99<br></p>
                         <button class="btn-add-carrinho" type="button">
                             Add carrinho
                     </button>
                     </div>
                 </li>
                 <li> 
-                    <img class="imagem" src="./assets/cabo azul.jpg" alt="">
-                    <h3 class="nome-produto">Nome Produto 5</h3>
+                    <img class="imagem" src="./assets/cabo azul.png" alt="">
+                    <h3 class="nome-produto">Cabo Flexível Azul 6mm</h3>
                     <div>
-                        <p class="preco-produto">140,00<br></p>
+                        <p class="preco-produto">R$ 220,00<br></p>
                         <button class="btn-add-carrinho" type="button">
                             Add carrinho
                     </button>
                     </div>
                 </li>
                 <li> 
-                    <img class="imagem" src="./assets/cabo branco.jpg" alt="">
-                    <h3 class="nome-produto">Nome Produto 6</h3>
+                    <img class="imagem" src="./assets/cabo preto.png" alt="">
+                    <h3 class="nome-produto">Cabo Flexível Preto 2,5mm</h3>
                     <div>
-                        <p class="preco-produto">150,00<br></p>
+                        <p class="preco-produto">R$ 150,00<br></p>
                         <button class="btn-add-carrinho" type="button">
                             Add carrinho
                     </button>
                     </div>
                 </li>
                 <li> 
-                    <img class="imagem" src="./assets/cabo preto.jpg" alt="">
-                    <h3 class="nome-produto">Nome Produto 7</h3>
+                    <img class="imagem" src="./assets/lampada-led.png" alt="">
+                    <h3 class="nome-produto">Lampada Led 12w</h3>
                     <div>
-                        <p class="preco-produto">160,00<br></p>
+                        <p class="preco-produto">R$ 9,99<br></p>
                         <button class="btn-add-carrinho" type="button">
                             Add carrinho
                     </button>
                     </div>
                 </li>
                 <li> 
-                    <img class="imagem" src="./assets/lampada-led.jpg" alt="">
-                    <h3 class="nome-produto">Nome Produto 8</h3>
+                    <img class="imagem" src="./assets/lampada-led.png" alt="">
+                    <h3 class="nome-produto">Lampada Led 9w</h3>
                     <div>
-                        <p class="preco-produto">170,00<br></p>
+                        <p class="preco-produto">R$ 8,70<br></p>
                         <button class="btn-add-carrinho" type="button">
                             Add carrinho
                     </button>
                     </div>
                 </li>
                 <li> 
-                    <img class="imagem" src="./assets/led.jpg" alt="">
-                    <h3 class="nome-produto" class="nome-produto">Nome Produto 9</h3>
+                    <img class="imagem" src="./assets/lampada-led.png" alt="">
+                    <h3 class="nome-produto" class="nome-produto">Lampada led 15w</h3>
                     <div>
-                        <p class="preco-produto">180,00<br></p>
+                        <p class="preco-produto">R$ 15,00<br></p>
                         <button class="btn-add-carrinho" type="button">
                             Add carrinho
                     </button>
                     </div>
                 </li>
         </section>
+
+
         <section class="container normal-section">
             <h2 class="section-title">Carrinho</h2>
 
@@ -178,7 +194,7 @@
                 Login
             </button>
             <div class="abrir-cadastro-usuario">
-                <label id="lbl_mensagemLogin"></label>
+                <a id="lbl_mensagemLogin"></a>
                 <button id="btn_FazerCadastro" class="btn-fazercadastro" type="submit">
                     Cadastrar
                 </button>
@@ -187,9 +203,9 @@
     </aside>
     
 
-    <aside  class="tela-cadastro">
+    <aside id="modal_Cadastro" class="tela-cadastro">
         
-        <form  id="modal_Cadastro"  class="tela-cadastro-modal">
+        <form    class="tela-cadastro-modal">
             <button id="btn_fecharCadastro" class="tela-cadastro-modal_fechar" type="button">
                 x
             </button>
@@ -197,57 +213,64 @@
             <ul class="formulario-cadastro">
 
                 <li>
-                    <label>CPF * </label>
+                    <label for="cpf">CPF * </label>
                     <input id="inp_CPF" class="input-form" type="text" placeholder="Digite seu CPF">
+                    <a id="msgErro"></a>
                 </li>
 
                 <li>
-                    <label>Nome * </label>
+                    <label for="nome">Nome * </label>
                     <input id="inp_Nome"   class="input-form" type="text" placeholder="Digite seu nome">
+                    <a>Mensagem de erro</a>
                 </li>
 
                 <li>
-                    <label>Endereço * </label>
+                    <label for="endereco">Endereço * </label>
                     <input id="inp_Endereco"  class="input-form" type="text" placeholder="Digite seu endereço">
+                    <a>Mensagem de erro</a>
                 </li>
 
                 <li>
-                    <label>Número Telefone * </label>
+                    <label for="numerotelefone">Número Telefone * </label>
                     <input id="inp_Telefone"  class="input-form" type="text" placeholder="Digite seu telefone">
+                    <a>Mensagem de erro</a>
                 </li>
                 <li>
-                    <label>Data Nascimento * </label>
+                    <label for="datanasc">Data Nascimento * </label>
                     <input id="inp_DataNasc"  class="input-form" type="text" placeholder="Digite sua data nascimento">
-
+                    <a>Mensagem de erro</a>
                 </li>
                 <li>
-                    <label>Email * </label>
+                    <label for="email">Email * </label>
                     <input id="inp_CadastroEmail"  class="input-form" type="text" placeholder="Digite seu email">
+                    <a>Mensagem de erro</a>
                 </li>
                 <li>
-                    <label>Senha * </label>
+                    <label for="senha">Senha * </label>
                     <input id="inp_CadastroSenha"  class="input-form" type="text" placeholder="Digite sua senha">
+                    <a>Mensagem de erro</a>
                 </li>
 
             </ul>
 
-            <div class="cadastrar-usuario">
-               
-                <button id="btn_EnviarCadastro" class="btn-enviar-cadastro" type="button">
-                    Cadastrar
-                </button>
-                <label> preeencher todos dados</label>
-            </div>
+            
             
         </form>
-       
+        <div class="cadastrar-usuario">
+               
+            <button id="btn_EnviarCadastro" class="btn-enviar-cadastro" type="button">
+                Cadastrar
+            </button>
+            <a id="erroCadastro">Mensagem de erro</a>
+        </div>
         
     </aside>
 
 
 
     <script src="./js/login.js"></script>
-    <script src="./js/carrinho.js"></script>
+   <script src="./js/carrinhoFinal.js"></script>
+    
 </body>
 
 <footer class="footer">

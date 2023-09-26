@@ -12,6 +12,7 @@ function ready() {
   const removeCartProductButtons = document.getElementsByClassName("remove-product-button")
   for (let i = 0; i < removeCartProductButtons.length; i++) {
     removeCartProductButtons[i].addEventListener("click", removeProduct)
+
   }
 
   // Mudança valor dos inputs
@@ -54,7 +55,7 @@ function addProductToCart(event) {
   console.log(productName)
   console.log(productPrice)
 
-  
+
   const productsCartNames = document.getElementsByClassName("cart-product-title")
   for (var i = 0; i < productsCartNames.length; i++) {
     if (productsCartNames[i].innerText === productName) {
@@ -69,19 +70,19 @@ function addProductToCart(event) {
 
   newCartProduct.innerHTML =
     `
-      <td class="product-identification">
-        <img src="${productImage}" alt="${productName}" class="cart-product-image">
-        <strong class="cart-product-title">${productName}</strong>
-      </td>
-      <td>
-        <span class="cart-product-price">${productPrice}</span>
-      </td>
-      <td>
-        <input type="number" value="1" min="0" class="product-qtd-input">
-        <button type="button" class="remove-product-button">Remover</button>
-      </td>
-    `
-  
+        <td class="product-identification">
+          <img src="${productImage}" alt="${productName}" class="cart-product-image">
+          <strong class="cart-product-title">${productName}</strong>
+        </td>
+        <td>
+          <span class="cart-product-price">${productPrice}</span>
+        </td>
+        <td>
+          <input type="number" value="1" min="0" class="product-qtd-input">
+          <button type="button" class="remove-product-button">Remover</button>
+        </td>
+      `
+
   const tableBody = document.querySelector(".cart-table tbody")
   tableBody.append(newCartProduct)
   updateTotal()
@@ -91,17 +92,22 @@ function addProductToCart(event) {
 }
 
 function makePurchase() {
+
+  if(user.textContent==""){
+alert("não esta logado");
+  }
+  else{
   if (totalAmount === "0,00") {
     alert("Seu carrinho está vazio!")
-  } else {   
+  } else {
     alert(
       `
-        Obrigado pela sua compra!
-        Valor do pedido: R$${totalAmount}\n
-        Volte sempre :)
-      `
+          Obrigado pela sua compra!
+          Valor do pedido: R$${totalAmount}\n
+          Volte sempre :)
+        `
     )
-
+    }
     document.querySelector(".cart-table tbody").innerHTML = ""
     updateTotal()
   }
@@ -118,7 +124,7 @@ function updateTotal() {
 
     totalAmount += productPrice * productQuantity
   }
-  
+
   totalAmount = totalAmount.toFixed(2)
   totalAmount = totalAmount.replace(".", ",")
   document.querySelector(".cart-total-container span").innerText = "R$" + totalAmount
