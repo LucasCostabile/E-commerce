@@ -11,12 +11,9 @@ const erroCadastro = document.getElementById("erroCadastro");
 const user = document.getElementById("user");
 
 class Usuario {
-  constructor(CPF, nome, endereco, numeroTelefone, dataNasc, e_mail, senha) {
+  constructor(CPF, nome,e_mail, senha) {
     this.CPF = CPF;
     this.nome = nome;
-    this.endereco = endereco;
-    this.numeroTelefone = numeroTelefone;
-    this.dataNasc = dataNasc;
     this.e_mail = e_mail;
     this.senha = senha;
   }
@@ -29,30 +26,22 @@ class Usuario {
         console.log("usuario cadastrados", listaUsuarios);
 
       };
-
-
-
-
-    })
+   })
   }
 
   lerDados() {
     const inp_CPF = document.getElementById("inp_CPF").value;
     const inp_Nome = document.getElementById("inp_Nome").value;
-    const inp_Endereco = document.getElementById("inp_Endereco").value;
-    const inp_Telefone = document.getElementById("inp_Telefone").value;
-    const inp_DataNasc = document.getElementById("inp_DataNasc").value;
     const inp_CadastroEmail = document.getElementById("inp_CadastroEmail").value;
     const inp_CadastroSenha = document.getElementById("inp_CadastroSenha").value;
-    let usuario = new Usuario(inp_CPF, inp_Nome, inp_Endereco, inp_Telefone, inp_DataNasc, inp_CadastroEmail, inp_CadastroSenha);
+    let usuario = new Usuario(inp_CPF, inp_Nome,inp_CadastroEmail, inp_CadastroSenha);
     return usuario;
   }
 
   validarDados(usuario) {
 
-    if (usuario.CPF == "" || usuario.nome == "" || usuario.endereco == "" || usuario.numeroTelefone == "" || usuario.dataNasc == ""
-      || usuario.e_mail == "" || usuario.senha == "") {
-      erroCadastro.textContent = "Campos em branco";
+    if (usuario.CPF == "" || usuario.nome == ""|| usuario.e_mail == "" || usuario.senha == "") {
+      erroCadastro.textContent = "Preencha todos os campos";
     }
     else {
       return true;
@@ -60,8 +49,6 @@ class Usuario {
     }
 
   }
-
-
 
   realizarLoginUser() {
     btn_FazerLogin.onclick = () => {
@@ -82,7 +69,6 @@ class Usuario {
           else if (isNaN.inp_EmailLogin !== usuario.e_mail && inp_EmailSenha !== usuario.senha) {
             lbl_mensagemLogin.textContent = "Usuário não Cadastrado";
           }
-
 
         });
       }
@@ -107,11 +93,9 @@ btn_fecharCadastro.onclick = () => {
 }
 btn_FecharTelaLogin.onclick = () => {
   modal_Login.style.display = "none";
-
   modal_Cadastro.style.display = "none";
 
 }
-
 
 
 const listaUsuarios = [];
