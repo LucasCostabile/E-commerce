@@ -11,7 +11,7 @@ const erroCadastro = document.getElementById("erroCadastro");
 const user = document.getElementById("user");
 
 class Usuario {
-  constructor(CPF, nome,e_mail, senha) {
+  constructor(CPF, nome, e_mail, senha) {
     this.CPF = CPF;
     this.nome = nome;
     this.e_mail = e_mail;
@@ -23,10 +23,13 @@ class Usuario {
       if (this.validarDados(usuario)) {
         listaUsuarios.push(usuario);
         erroCadastro.textContent = "Usuário cadastrado";
-        console.log("usuario cadastrados", listaUsuarios);
+        const limpaForm = document.querySelector(".formulario-cadastro");
+        limpaForm.querySelectorAll("input").forEach((campo) => {
+          campo.value = "";
 
+        })
       };
-   })
+    })
   }
 
   lerDados() {
@@ -34,13 +37,13 @@ class Usuario {
     const inp_Nome = document.getElementById("inp_Nome").value;
     const inp_CadastroEmail = document.getElementById("inp_CadastroEmail").value;
     const inp_CadastroSenha = document.getElementById("inp_CadastroSenha").value;
-    let usuario = new Usuario(inp_CPF, inp_Nome,inp_CadastroEmail, inp_CadastroSenha);
+    let usuario = new Usuario(inp_CPF, inp_Nome, inp_CadastroEmail, inp_CadastroSenha);
     return usuario;
   }
 
   validarDados(usuario) {
 
-    if (usuario.CPF == "" || usuario.nome == ""|| usuario.e_mail == "" || usuario.senha == "") {
+    if (usuario.CPF == "" || usuario.nome == "" || usuario.e_mail == "" || usuario.senha == "") {
       erroCadastro.textContent = "Preencha todos os campos";
     }
     else {
@@ -64,10 +67,6 @@ class Usuario {
             console.log("usuario " + usuario.nome + "encontrado");
             user.textContent = usuario.nome;
 
-          }
-
-          else if (isNaN.inp_EmailLogin !== usuario.e_mail && inp_EmailSenha !== usuario.senha) {
-            lbl_mensagemLogin.textContent = "Usuário não Cadastrado";
           }
 
         });
