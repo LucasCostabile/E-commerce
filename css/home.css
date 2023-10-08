@@ -1,3 +1,6 @@
+html {
+    scroll-behavior: smooth;
+}
 :root {
     --white: #fff;
     --red: #aa0505;
@@ -98,12 +101,14 @@ li {
     align-items: center;
     gap: 8px;
     text-align: center;
-    background-color: rgba(134, 131, 131, 0.847);
-    backdrop-filter: blur(5px);
+    background: linear-gradient(-120deg, rgba(0, 0, 0, 0.098) 0%, rgb(255, 255, 255) 90%);
+    backdrop-filter: blur(4px);
+    border: outset #006437 3px;
     width: 30%;
     min-width: 300px;
     min-height: 230px;
-    border: solid white 3px;
+    border-radius: 8px;
+  
 
     .tela-login-modal_fechar {
         position: absolute;
@@ -116,13 +121,7 @@ li {
         background-color: rgb(255, 0, 0);
         cursor: pointer;
     }
-
-    .btn-fazerlogin,
-    .btn-fazercadastro {
-        width: 100px;
-        height: 30px;
-
-    }
+   
 
     .abrir-cadastro-usuario {
         display: flex;
@@ -168,17 +167,15 @@ li {
         background-color: rgb(255, 0, 0);
         cursor: pointer;
     }
-    .input-form{
+    
+   
+}
+.input-form{
 
-background-color: rgb(255, 255, 255);
-        padding: 8px;
-        border:2px solid rgba(70, 70, 70, 0.566) ;
-        border-radius: 8px;
-    }
-
-    .formulario-cadastro a{
-       /* visibility: hidden;*/
-    }
+    background-color: rgb(255, 255, 255);
+    padding: 8px;
+    border:2px solid rgba(70, 70, 70, 0.566) ;
+    border-radius: 8px;
 }
 
 
@@ -204,7 +201,8 @@ background-color: rgb(255, 255, 255);
 }
 
 
-.btn-enviar-cadastro{
+.btn-enviar-cadastro, .btn-fazerlogin,
+.btn-fazercadastro {
     width: 100px;
     height: 30px;
     border-radius: 7px;
