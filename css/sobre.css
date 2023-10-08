@@ -59,16 +59,13 @@ li {
 main {
     display: flex;
     flex-wrap: wrap;
-<<<<<<< HEAD
+
     padding: 100px;
-=======
-    padding: 50px;
->>>>>>> 4a2a21782a5c0c2771d6e0bf6c0be84610e7721a
     justify-content: center;
 }
 
 .member h3 {
-<<<<<<< HEAD
+
     font-family: sans-serif;
     margin: 0;
     color: var(--branco-principal);
@@ -97,28 +94,11 @@ main {
 .member ul li a:hover {
     background-color: #74B49B;
     color: #202020;
-=======
-    font-family: var(--fonte-primaria);
-    margin: 0;
-    color: var(--branco-principal);
-}
-.member ul li a {
-    font-family: var(--fonte-primaria);
-    color: var(--branco-principal);
-    text-decoration: none;
-    padding: 5px;
->>>>>>> 4a2a21782a5c0c2771d6e0bf6c0be84610e7721a
 }
 
-
-.footer{
-<<<<<<< HEAD
-   text-align: center;
-   padding: 200px;
-   color: #006437;
-   font-family: sans-serif;
-=======
-    display: flex;
-    justify-content: center;
->>>>>>> 4a2a21782a5c0c2771d6e0bf6c0be84610e7721a
+.footer {
+    text-align: center;
+    padding: 200px;
+    color: #006437;
+    font-family: sans-serif;
 }
