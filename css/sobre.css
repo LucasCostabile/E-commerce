@@ -59,24 +59,46 @@ li {
 main {
     display: flex;
     flex-wrap: wrap;
-    padding: 50px;
+
+    padding: 100px;
     justify-content: center;
 }
 
 .member h3 {
-    font-family: var(--fonte-primaria);
+
+    font-family: sans-serif;
     margin: 0;
     color: var(--branco-principal);
+    color: #006437;
 }
 .member ul li a {
-    font-family: var(--fonte-primaria);
-    color: var(--branco-principal);
+    color: #006437;
     text-decoration: none;
     padding: 5px;
+    font-family: sans-serif;
 }
 
+.member img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
 
-.footer{
-    display: flex;
-    justify-content: center;
+.member:hover {
+    transform: scale(1.3);
+    transition: all 0.4s;
+    z-index: 10;
+}
+
+.member ul li a:hover {
+    background-color: #74B49B;
+    color: #202020;
+}
+
+.footer {
+    text-align: center;
+    padding: 200px;
+    color: #006437;
+    font-family: sans-serif;
 }
