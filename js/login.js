@@ -24,7 +24,11 @@ class Usuario {
         if (this.validarDados(usuario))
        {
         listaUsuarios.push(usuario);
-        localStorage.setItem("usuariosLocalstorage", listaUsuarios);
+        const armazenaLocal = (chave, valor) => {
+          localStorage.setItem(chave, JSON.stringify(valor));
+        }
+
+        armazenaLocal("usuariosLocalstorage", listaUsuarios);
 
         setTimeout(() => {
           modal_Cadastro.style.display = "none";
