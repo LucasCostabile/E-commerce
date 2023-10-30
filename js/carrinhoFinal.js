@@ -10,6 +10,7 @@ if (document.readyState == 'loading') {
 let totalAmount = "0,00"
 
 function ready() {
+
   // Botão remover produto localizado  através do getElementsbyClassName e loop for para percorrer cada botão que será clicado
   const removeCartProductButtons = document.getElementsByClassName("remove-product-button")
 
@@ -39,19 +40,63 @@ function ready() {
 function removeProduct(event) {
   event.target.parentElement.parentElement.remove()
 
-  updateTotal()
-}
+  if (event.target.id == "removeProduct") {
+    const tabela = document.getElementById("table-itens");
+    // Obtém todas as linhas da tabela
+    const linhas = tabela.getElementsByClassName("cart-product");
 
-// verifica se o input é igual a zero. Se sim, excluir produto do carrinho
-function checkIfInputIsNull(event) {
-itensCarrinho.textContent++;
-  if (event.target.value === "0") {
-    event.target.parentElement.parentElement.remove()
+    let totalInputs = 0;
+    // Percorrer todas as linhas da tabela
+    for (let i = 0; i < linhas.length; i++) {
+
+      // Encontra o input dentro da linha
+      let input = linhas[i].querySelector(".product-qtd-input");
+
+      let valorInput = input ? parseInt(input.value) : 0;
+
+      // Adiciona o valor do input ao totalInputs
+      totalInputs += valorInput;
+
+    }
+
+    itensCarrinho.textContent = totalInputs;
 
   }
 
   updateTotal()
 }
+
+// verifica se o input é igual a zero. Se sim, excluir produto do carrinho
+function checkIfInputIsNull(event) {
+
+  if (event.target.value === "0") {
+    event.target.parentElement.parentElement.remove()
+  }
+
+  const tabela = document.getElementById("table-itens");
+  // Obtém todas as linhas da tabela
+  const linhas = tabela.getElementsByClassName("cart-product");
+
+  let totalInputs = 0;
+  // Percorrer todas as linhas da tabela
+  for (let i = 0; i < linhas.length; i++) {
+
+    // Encontra o input dentro da linha
+    let input = linhas[i].querySelector(".product-qtd-input");
+
+    let valorInput = input ? parseInt(input.value) : 0;
+
+    // Adiciona o valor do input ao totalInputs
+    totalInputs += valorInput;
+
+  }
+
+  itensCarrinho.textContent = totalInputs;
+
+  updateTotal()
+}
+
+
 // função para manipular as informações que irão para o carrinho
 function addProductToCart(event) {
 
@@ -86,7 +131,7 @@ function addProductToCart(event) {
       </td>
       <td>
         <input type="number" value="1" min="0" class="product-qtd-input">
-        <button type="button" class="remove-product-button">Remover</button>
+        <button id="removeProduct" type="button" class="remove-product-button">Remover</button>
       </td>
     `
 
@@ -116,9 +161,10 @@ function makePurchase() {
       Volte sempre :)
     `
     )
-
+    
     document.querySelector(".cart-table tbody").innerHTML = ""// apos efetuar compra limpa dados carrinho
     updateTotal()
+    itensCarrinho.textContent="";
   }
 }
 
@@ -151,11 +197,12 @@ function updateTotal() {
 const sms = document.getElementsByClassName("btn-add-carrinho");
 const itensCarrinho = document.getElementById("itens-carrinho");
 
+
 for (let i = 0; i < sms.length; i++) {
   sms[i].addEventListener("click", (event) => {
     itensCarrinho.textContent++; // mostra qtns itens tem no carrinho (* falta fazer teste com product-qtd-input obs: linha 47 criar uma lógica pra itenscarrinho--) 
     const button = event.target
-    const elementPai = button.parentElement.parentElement 
+    const elementPai = button.parentElement.parentElement
 
     if (!elementPai.classList.contains("mgs-add_carrinho")) { // verefica se a classe existe 
       elementPai.classList.add("mgs-add_carrinho");  // cria a classe se não existir
@@ -171,5 +218,6 @@ for (let i = 0; i < sms.length; i++) {
     }
   });
 }
+
 
 
