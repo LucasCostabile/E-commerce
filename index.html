@@ -12,8 +12,8 @@
 <body>
     <header class="header">
 
-        <nav>
-            <ul class="nav-menu">
+        <nav >
+            <ul  class="nav-menu">
                 <img class="img-logo" src="./assets/logo eletrica.png" alt="Logo e-commerce">
                 <li><a href="index.html">Home</a></li>
                 <li> <a href="sobre.html"> Sobre </a></li>
@@ -25,16 +25,17 @@
         <a Id="user"></a>
 
         <aside class="btn-entrar-carrinho">
-            <button id="btn_Entrar" class="btn-entrar" type="submit">
-                <a>Entrar</a>
-                <img class="icon-button" src="./assets/icon-login.png">
-            </button>
-
+            <a href="#sec-desc">
+                 <button id="btn_Entrar" class="btn-entrar" type="submit">
+                    Entrar
+                    <img class="icon-button" src="./assets/icon-login.png">
+                 </button>
+            </a>
             <a href="#sec-car">
                 <button id="btn_Carrinho" class="btn-carrinho" type="submit">
                     <img class="icon-button" src="./assets/icon_carrinho.svg">
                     Carrinho
-                    <p id="itens-carrinho">0</p>
+                    <p id="itens-carrinho"></p>
                 </button>
             </a></li>
 
@@ -43,123 +44,21 @@
 
 
     <main>
-        <section class="desc-loja">
+        <section id="sec-desc" class="desc-loja">
             <h1> Loja do Severino </h1>
-            <span>Produtos bão e barato </span>
+            <span>Soluções em Energia</span>
         </section>
 
         <section class="card-produtos">
             <ul  class="card-produtos__lista-produtos">
 
-                <li id="teste">
-                    <img class="imagem" src="./assets/cabo branco.png" alt="">
-                    <h3 class="nome-produto">Cabo Flexível Branco 4mm </h3>
-                    <div>
-                        <p class="preco-produto">R$ 180,00<br></p>
-                        <button class="btn-add-carrinho" type="button">
-                            Comprar
-                        </button>
-
-                    </div>
-              
-                </li>
-
-                <li id="teste">
-                    <img class="imagem" src="./assets/disjuntor_bipolar.png" alt="">
-                    <h3 class="nome-produto">Disjuntor Bipolar 20a 380VCA</h3>
-                    <div>
-                        <p class="preco-produto">R$ 35,50<br></p>
-                        <button class="btn-add-carrinho" type="button">
-                            Comprar
-                        </button>
-                    </div>
-                </li>
-
-                <li id="teste">
-                    <img class="imagem" src="./assets/disjuntor_monopolar.png" alt="">
-                    <h3 class="nome-produto">Disjuntor Monopolar 10a 220VCA</h3>
-
-                    <div>
-                        <p class="preco-produto">R$ 9,80<br></p>
-                        <button class="btn-add-carrinho" type="button">
-                            Comprar
-                        </button>
-                    </div>
-                </li>
-
-                <li>
-                    <img class="imagem" src="./assets/disjuntor_tripolar.png" alt="">
-                    <h3 class="nome-produto">Disjuntor Tripolar 60a 400VCA</h3>
-                    <div>
-                        <p class="preco-produto">R$ 65,99<br></p>
-                        <button class="btn-add-carrinho" type="button">
-                            Comprar
-                        </button>
-                    </div>
-                </li>
-
-                <li>
-                    <img class="imagem" src="./assets/cabo azul.png" alt="">
-                    <h3 class="nome-produto">Cabo Flexível Azul 6mm</h3>
-                    <div>
-                        <p class="preco-produto">R$ 220,00<br></p>
-                        <button class="btn-add-carrinho" type="button">
-                           Comprar
-                        </button>
-                    </div>
-                </li>
-
-                <li>
-                    <img class="imagem" src="./assets/cabo preto.png" alt="">
-                    <h3 class="nome-produto">Cabo Flexível Preto 2,5mm</h3>
-                    <div>
-                        <p class="preco-produto">R$ 150,00<br></p>
-                        <button class="btn-add-carrinho" type="button">
-                           Comprar
-                        </button>
-                    </div>
-                </li>
-
-                <li>
-                    <img class="imagem" src="./assets/lampada-led.png" alt="">
-                    <h3 class="nome-produto">Lampada Led 12w</h3>
-                    <div>
-                        <p class="preco-produto">R$ 9,99<br></p>
-                        <button class="btn-add-carrinho" type="button">
-                           Comprar
-                        </button>
-                    </div>
-                </li>
-
-                <li>
-                    <img class="imagem" src="./assets/lampada-led.png" alt="">
-                    <h3 class="nome-produto">Lampada Led 9w</h3>
-                    <div>
-                        <p class="preco-produto">R$ 8,70<br></p>
-                        <button class="btn-add-carrinho" type="button">
-                            Comprar
-                        </button>
-                    </div>
-                </li>
-
-                <li>
-                    <img class="imagem" src="./assets/lampada-led.png" alt="">
-                    <h3 class="nome-produto" class="nome-produto">Lampada led 15w</h3>
-                    <div>
-                        <p class="preco-produto">R$ 15,00<br></p>
-                        <button class="btn-add-carrinho" type="button">
-                            Comprar
-                        </button>
-                    </div>
-                </li>
             </ul>
         </section>
 
 
         <section id="sec-car" class="container normal-section">
             <h2 class="section-title">Carrinho</h2>
-
-            <table class="cart-table">
+            <table id="table-itens" class="cart-table">
                 <thead>
                     <tr>
                         <th class="table-head-item first-col">Item</th>
@@ -252,14 +151,14 @@
     </aside>
 
 
-
     <script src="./js/login.js"></script>
     <script src="./js/carrinhoFinal.js"></script>
+
 
 </body>
 
 <footer class="footer">
-    <h3>Loja do severino</h3>
+    <h3>@Loja do severino</h3>
 </footer>
 
 </html>
