@@ -21,10 +21,13 @@ class Usuario {
   cadastrarUsuario() {
     btn_EnviarCadastro.addEventListener('click', () => {
       let usuario = this.lerDados();
-        if (this.validarDados(usuario))
-       {
+      if (this.validarDados(usuario)) {
         listaUsuarios.push(usuario);
-        localStorage.setItem("usuariosLocalstorage", listaUsuarios);
+        const armazenaLocal = (chave, valor) => {
+          localStorage.setItem(chave, JSON.stringify(valor));
+        }
+
+        armazenaLocal("usuariosLocalstorage", listaUsuarios);
 
         setTimeout(() => {
           modal_Cadastro.style.display = "none";
@@ -50,8 +53,7 @@ class Usuario {
   }
 
   validarDados(usuario) {
-    if (usuario.CPF == "" || usuario.nome == "" || usuario.e_mail == "" || usuario.senha == "")
-    {
+    if (usuario.CPF == "" || usuario.nome == "" || usuario.e_mail == "" || usuario.senha == "") {
       erroCadastro.textContent = "Preencha todos os campos";
     }
     else {
@@ -66,8 +68,7 @@ class Usuario {
       const inp_EmailSenha = document.getElementById("inp_EmailSenha").value;
       let usuarioLS = JSON.parse(localStorage.getItem("usuariosLocalstorage"))
 
-      if (!usuarioLS || usuarioLS.length === 0) 
-      {
+      if (!usuarioLS || usuarioLS.length === 0) {
         setTimeout(() => {
           modal_Cadastro.style.display = "flex";
           modal_Login.style.display = "none";
@@ -79,15 +80,13 @@ class Usuario {
 
       let usuarioEncontrado = false;
       usuarioLS.forEach((usuario) => {
-        if (inp_EmailLogin === usuario.e_mail && inp_EmailSenha === usuario.senha)
-        {
+        if (inp_EmailLogin === usuario.e_mail && inp_EmailSenha === usuario.senha) {
           usuarioEncontrado = true;
           lbl_mensagemLogin.textContent = "Usuário logado";
-          user.textContent = usuario.nome;
+          user.textContent = "Bem vindo! " + usuario.nome;
         }
       });
-      if (usuarioEncontrado == false)
-      {
+      if (usuarioEncontrado == false) {
         lbl_mensagemLogin.textContent = "Usuário Não Encontrado";
       }
     }
@@ -112,12 +111,12 @@ btn_fecharCadastro.onclick = () => {
 btn_FecharTelaLogin.onclick = () => {
   modal_Login.style.display = "none";
   modal_Cadastro.style.display = "none";
-  lbl_mensagemLogin.textContent="";
-   const limpaForm = document.querySelector(".tela-login-modal");
-        limpaForm.querySelectorAll("input").forEach((campo) => {
-          campo.value = "";
+  lbl_mensagemLogin.textContent = "";
+  const limpaForm = document.querySelector(".tela-login-modal");
+  limpaForm.querySelectorAll("input").forEach((campo) => {
+    campo.value = "";
 
-        })
+  })
 
 }
 
