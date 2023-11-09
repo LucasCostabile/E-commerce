@@ -120,7 +120,6 @@ btn_FecharTelaLogin.onclick = () => {
 
 }
 
-
 const listaUsuarios = usuariosArmazenados || [];
 const novoLogin = new Usuario();
 novoLogin.realizarLoginUser();

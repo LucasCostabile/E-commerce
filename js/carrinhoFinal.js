@@ -1,3 +1,4 @@
+//aguardar a pagina Html carregar para iniciar o Js, devido a eventos ainda não criados no html com isso criamos a função ready
 if (document.readyState == 'loading') {
   document.addEventListener('DOMContentLoaded', ready)
 } else {
@@ -79,7 +80,6 @@ const itensJson= listaProdutos.map((item)=>{
   cardProdutos.innerHTML=itensJson.join("");
 
 
-// aguardar a pagina Html carregar para iniciar o Js, devido a eventos ainda não criados no html com isso criamos a função ready
 
 
 // quantia total do carrinho
