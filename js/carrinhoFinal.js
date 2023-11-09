@@ -1,4 +1,4 @@
-//aguardar a pagina Html carregar para iniciar o Js, devido a eventos ainda não criados no html com isso criamos a função ready
+// aguardar a pagina Html carregar para iniciar o Js, devido a eventos ainda não criados no html com isso criamos a função ready
 if (document.readyState == 'loading') {
   document.addEventListener('DOMContentLoaded', ready)
 } else {
@@ -61,6 +61,7 @@ let listaProdutos=
    }    
 ]
 
+
 const itensJson= listaProdutos.map((item)=>{
   return`
   <li>
@@ -78,7 +79,6 @@ const itensJson= listaProdutos.map((item)=>{
   })
   const cardProdutos=document.querySelector(".card-produtos__lista-produtos");
   cardProdutos.innerHTML=itensJson.join("");
-
 
 
 
@@ -168,9 +168,6 @@ function checkIfInputIsNull(event) {
   itensCarrinho.textContent = totalInputs;
   updateTotal()
 }
-
-
-
 
 
 // função para manipular as informações que irão para o carrinho
@@ -264,6 +261,9 @@ function updateTotal() {
   document.querySelector(".cart-total-container span").innerText = "R$" + totalAmount
   // selecionando o elemento com o querySelector, usamos o innerText para acessar o valor e fazemos a concatenação do R$ com a quantia final
 }
+
+
+
 
   const sms = document.getElementsByClassName("btn-add-carrinho");
   const itensCarrinho = document.getElementById("itens-carrinho");
