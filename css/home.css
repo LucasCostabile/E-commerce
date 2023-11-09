@@ -1,11 +1,12 @@
 html {
     scroll-behavior: smooth;
 }
+
 :root {
     --white: #fff;
     --red: #aa0505;
     --gray: #959595;
-    --blue:  #006437;
+    --blue: #006437;
 }
 
 
@@ -16,8 +17,7 @@ html {
 }
 
 body {
-
-    background-color: rgb(247, 247, 247);
+    background-color: #f7f7f7;
 }
 
 a,
@@ -28,8 +28,10 @@ li {
 }
 
 .header {
-    background-color:  #DFDFDE;
-    height: 65px;
+    position: fixed;
+    width: 100%;
+    background-color: #DFDFDE;
+    height: 55px;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -43,20 +45,21 @@ li {
     }
 
     .nav-menu li a {
-         font-weight: bold;
+        font-weight: bold;
         font-size: 14px;
         color: #006437;
         font-family: sans-serif;
     }
-    .img-logo{
 
-        width: 65px;
-        height: 65px;
+    .img-logo {
+        width: 48px;
+        height: 48px;
     }
-    .icon-button{
+
+    .icon-button {
         width: 17px;
         height: 17px;
-        
+
     }
 
 }
@@ -64,9 +67,11 @@ li {
 .btn-entrar-carrinho {
     display: flex;
     gap: 5px;
+
     .btn-entrar,
     .btn-carrinho {
-        width: 80px;
+        gap: 5px;
+        width: 100px;
         height: 35px;
         border-radius: 7px;
         border: solid black 1px;
@@ -76,7 +81,7 @@ li {
         justify-content: center;
 
     }
-
+  
 }
 
 .btn-entrar:hover,
@@ -84,15 +89,13 @@ li {
 .btn-add-carrinho:hover,
 .btn-fazerlogin:hover,
 .btn-fazercadastro:hover,
-.btn-enviar-cadastro:hover
- {
-
+.btn-enviar-cadastro:hover {
     background-color: #006437;
     color: white;
 }
 
 .tela-login-modal {
-    top:8%;
+    top: 8%;
     left: 45%;
     position: absolute;
     display: none;
@@ -104,11 +107,11 @@ li {
     background: linear-gradient(-120deg, rgba(0, 0, 0, 0.098) 0%, rgb(255, 255, 255) 90%);
     backdrop-filter: blur(4px);
     border: outset #006437 3px;
-    width: 30%;
+    width: 15%;
     min-width: 300px;
     min-height: 230px;
     border-radius: 8px;
-  
+
 
     .tela-login-modal_fechar {
         position: absolute;
@@ -121,7 +124,7 @@ li {
         background-color: rgb(255, 0, 0);
         cursor: pointer;
     }
-   
+
 
     .abrir-cadastro-usuario {
         display: flex;
@@ -132,31 +135,32 @@ li {
     }
 }
 
-.tela-cadastro{
+.tela-cadastro {
     padding-left: 10px;
     padding-right: 10px;
     max-width: 700px;
     width: 50%;
-    gap:10px;
+    gap: 10px;
     display: none;
     flex-direction: column;
     flex-wrap: wrap;
     min-height: 500px;
     position: absolute;
-    justify-content:center;
+    justify-content: center;
     align-items: left;
     top: 8%;
     left: 25%;
-    
     background: linear-gradient(-120deg, rgba(0, 0, 0, 0.098) 0%, rgb(255, 255, 255) 70%);
     backdrop-filter: blur(4px);
     border: outset #006437 3px;
     border-radius: 8px;
 
 }
+
 .tela-cadastro-modal {
     width: 70%;
-   .tela-cadastro-modal_fechar {
+
+    .tela-cadastro-modal_fechar {
         position: absolute;
         top: 0px;
         right: 0px;
@@ -167,50 +171,50 @@ li {
         background-color: rgb(255, 0, 0);
         cursor: pointer;
     }
-    
-   
+
+
 }
-.input-form{
+
+.input-form {
 
     background-color: rgb(255, 255, 255);
     padding: 8px;
-    border:2px solid rgba(70, 70, 70, 0.566) ;
+    border: 2px solid rgba(70, 70, 70, 0.566);
     border-radius: 8px;
 }
 
 
-.cadastrar-usuario{
+.cadastrar-usuario {
     display: flex;
     flex-direction: column;
-    gap:20px
+    gap: 20px
 }
 
 .formulario-cadastro {
     display: flex;
     flex-direction: column;
     gap: 20px;
-
 }
 
 .formulario-cadastro li {
-
     display: flex;
     flex-direction: column;
-
-
 }
 
 
-.btn-enviar-cadastro, .btn-fazerlogin,
+.btn-enviar-cadastro,
+.btn-fazerlogin,
 .btn-fazercadastro {
     width: 100px;
     height: 30px;
     border-radius: 7px;
-        border: solid black 1px;
-        cursor: pointer;
+    border: solid black 1px;
+    cursor: pointer;
 
 }
+
 .desc-loja {
+    padding-top: 70px;
     width: 100%;
     height: 250px;
     background: linear-gradient(0deg, #103e10 0%, rgb(4, 56, 51) 100%);
@@ -219,34 +223,33 @@ li {
     justify-content: center;
     align-items: center;
 
-    
+
 }
 
 main {
     .desc-loja>h1 {
         color: white;
         font-size: 65px;
-         font-family: sans-serif;
+        font-family: sans-serif;
     }
 
     .desc-loja>span {
         color: rgb(255, 255, 255);
         font-size: 22px;
-       
+
     }
 }
 
 
 .card-produtos__lista-produtos {
     padding: 100px;
-
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     gap: 50px;
 
     .imagem {
-        
+
         width: 270px;
         height: 230px;
 
@@ -256,49 +259,53 @@ main {
 .card-produtos__lista-produtos li {
     transition: all .3s ease-in;
     background-color: #EEEEEE;
-
     display: flex;
     flex-direction: column;
     border: solid rgba(0, 0, 0, 0.21) 1px;
     height: 420px;
-
     gap: 30px;
-   text-align: center;
+    text-align: center;
     align-items: center;
 
 }
- .card-produtos__lista-produtos li:hover {
-  
-    background: linear-gradient(180deg,#EEEEEE 0%,#DFDFDE 100%);
+
+.card-produtos__lista-produtos li:hover {
+
+    background: linear-gradient(180deg, #EEEEEE 0%, #DFDFDE 100%);
 }
 
-.card-produtos__lista-produtos h3{
-color:#006437;
-font-family: sans-serif;
-font-size: 17px;
+.card-produtos__lista-produtos h3 {
+    color: #006437;
+    font-family: sans-serif;
+    font-size: 17px;
 
 }
 
 
 
 .btn-add-carrinho {
-    
+
     background-color: white;
     width: 100px;
     cursor: pointer;
     height: 35px;
-    border-radius: 8%;
+    border-radius: 7px;
     border: outset #006437;
 
 }
 
 .footer {
+    display: flex;
+    align-items: center;
     width: 100%;
-    height: 150px;
+    height: 80px;
     background-color: black;
     display: flex;
     justify-content: center;
-
+  
+}
+.footer h3{
+    color: white;
 }
 
 /* CSS carrinho */
@@ -318,6 +325,7 @@ font-size: 17px;
     text-transform: uppercase;
     margin-bottom: 24px;
 }
+
 /* CSS carrinho */
 
 
@@ -365,12 +373,13 @@ font-size: 17px;
 }
 
 .purchase-button {
+    
     display: flex;
     margin: 24px auto 0;
     background: var(--blue);
     color: var(--white);
     border: 0;
-    border-radius: 6px;
+    border-radius: 7px;
     padding: 16px 20px;
     text-transform: uppercase;
     font-size: 20px;
@@ -414,4 +423,3 @@ button {
     border-radius: 6px;
     transition: filter 0.2s;
 }
-
