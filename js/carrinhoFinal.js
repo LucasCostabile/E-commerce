@@ -1,10 +1,86 @@
-
-// aguardar a pagina Html carregar para iniciar o Js, devido a eventos ainda não criados no html com isso criamos a função ready
 if (document.readyState == 'loading') {
   document.addEventListener('DOMContentLoaded', ready)
 } else {
   ready()
 }
+
+let listaProdutos=
+[
+    {
+        nome:"Cabo Flexível Branco 4mm",
+        preco:"R$ 180,00",
+        imagem:"./assets/cabo branco.png"
+    },
+    {
+        nome:"Disjuntor Bipolar 20a 380VCA",
+        preco:"R$ 35,50",
+        imagem:"./assets/disjuntor_bipolar.png"
+    }
+    ,
+    {
+        nome:"Disjuntor Monopolar 10a 220VCA",
+        preco:"R$ 9,80",
+        imagem:"./assets/disjuntor_monopolar.png"
+    }
+    ,
+    {
+        nome:"Disjuntor Tripolar 60a 400VCA",
+        preco:"R$ 65,99",
+        imagem:"./assets/disjuntor_tripolar.png"
+    }
+    ,
+    {
+        nome:"Cabo Flexível Azul 6mm",
+        preco:"R$ 220,00",
+        imagem:"./assets/cabo azul.png"
+    }
+    ,
+    {
+        nome:"Cabo Flexível Preto 2,5mm",
+        preco:"R$ 150,00",
+        imagem:"./assets/cabo preto.png"
+    }
+    ,
+    {
+        nome:"Lampada Led 12w",
+        preco:"R$ 9,99",
+        imagem:"./assets/lampada-led.png"
+    }
+    ,
+    {
+        nome:"Lampada Led 15w",
+        preco:"R$ 14,99",
+        imagem:"./assets/lampada-led.png"
+    }
+    ,
+    {
+        nome:"Lampada Led 9w",
+        preco:"R$ 7,99",
+        imagem:"./assets/lampada-led.png"
+   }    
+]
+
+const itensJson= listaProdutos.map((item)=>{
+  return`
+  <li>
+  <img class="imagem" src="${item.imagem}" alt="">
+  <h3 class="nome-produto">${item.nome}</h3>
+  <div>
+      <p class="preco-produto">${item.preco}</p>
+      <button class="btn-add-carrinho" type="button">
+         Comprar
+      </button>
+  </div>
+  </li>
+  
+  `
+  })
+  const cardProdutos=document.querySelector(".card-produtos__lista-produtos");
+  cardProdutos.innerHTML=itensJson.join("");
+
+
+// aguardar a pagina Html carregar para iniciar o Js, devido a eventos ainda não criados no html com isso criamos a função ready
+
 
 // quantia total do carrinho
 let totalAmount = "0,00"
@@ -51,7 +127,6 @@ function removeProduct(event) {
 
       // Encontra o input dentro da linha
       let input = linhas[i].querySelector(".product-qtd-input");
-
       let valorInput = input ? parseInt(input.value) : 0;
 
       // Adiciona o valor do input ao totalInputs
@@ -74,7 +149,7 @@ function checkIfInputIsNull(event) {
   }
 
   const tabela = document.getElementById("table-itens");
-  // Obtém todas as linhas da tabela
+  // Obtém todas as linhas da tabela 
   const linhas = tabela.getElementsByClassName("cart-product");
 
   let totalInputs = 0;
@@ -83,7 +158,6 @@ function checkIfInputIsNull(event) {
 
     // Encontra o input dentro da linha
     let input = linhas[i].querySelector(".product-qtd-input");
-
     let valorInput = input ? parseInt(input.value) : 0;
 
     // Adiciona o valor do input ao totalInputs
@@ -92,9 +166,11 @@ function checkIfInputIsNull(event) {
   }
 
   itensCarrinho.textContent = totalInputs;
-
   updateTotal()
 }
+
+
+
 
 
 // função para manipular as informações que irão para o carrinho
@@ -161,10 +237,10 @@ function makePurchase() {
       Volte sempre :)
     `
     )
-    
+
     document.querySelector(".cart-table tbody").innerHTML = ""// apos efetuar compra limpa dados carrinho
     updateTotal()
-    itensCarrinho.textContent="";
+    itensCarrinho.textContent = "";
   }
 }
 
@@ -173,18 +249,13 @@ function updateTotal() {
 
   totalAmount = 0
   const cartProducts = document.getElementsByClassName("cart-product")
-
-
   // loop for para percorrer a quantidade de produtos no carrinho 
   for (let i = 0; i < cartProducts.length; i++) {
     //acessamos cada produto com "cartProducts[i]" através da Classe com a posição [0], "innerText" foi usado para acessar o texto, e "replace" para substituir
     const productPrice = cartProducts[i].getElementsByClassName("cart-product-price")[0].innerText.replace("R$", "").replace(",", ".")
     const productQuantity = cartProducts[i].getElementsByClassName("product-qtd-input")[0].value
     // atraves do produto analisado cartProducts[i] com a classe de quantidade do input acessamos a posição [0] que é retornado, com o "value" acessamos o valor
-
-
     totalAmount += productPrice * productQuantity
-
     // quantia total é igual a ela mesma + o resultado de preço do produto multiplicado pela quantidade 
   }
 
@@ -194,13 +265,11 @@ function updateTotal() {
   // selecionando o elemento com o querySelector, usamos o innerText para acessar o valor e fazemos a concatenação do R$ com a quantia final
 }
 
-const sms = document.getElementsByClassName("btn-add-carrinho");
-const itensCarrinho = document.getElementById("itens-carrinho");
-
-
+  const sms = document.getElementsByClassName("btn-add-carrinho");
+  const itensCarrinho = document.getElementById("itens-carrinho");
 for (let i = 0; i < sms.length; i++) {
   sms[i].addEventListener("click", (event) => {
-    itensCarrinho.textContent++; // mostra qtns itens tem no carrinho (* falta fazer teste com product-qtd-input obs: linha 47 criar uma lógica pra itenscarrinho--) 
+    itensCarrinho.textContent++; 
     const button = event.target
     const elementPai = button.parentElement.parentElement
 
@@ -218,6 +287,4 @@ for (let i = 0; i < sms.length; i++) {
     }
   });
 }
-
-
 
