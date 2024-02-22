@@ -218,26 +218,48 @@ function addProductToCart(event) {
 
 // verifica se o carrinho esta vazio
 function makePurchase() {
-  if (user.textContent == "") {
-    alert("falta logar")
+  if (user.textContent == "" && totalAmount !=="0,00") {
+    Swal.fire({
+      title: "Deseja finalizar a compra?",
+      text: "Faça seu login para continuar",
+      confirmButtonColor:  "#006437",
+      background: "#f7f7f7",
+      width:"30%",
+      icon: "warning"
+    });
+   
 
   }
-  else if ((totalAmount === "0,00")) {
-    alert("Seu carrinho está vazio!")
+  else if ((totalAmount === "0,00"|| user.textContent=="")) {
+    Swal.fire({
+      title: "Sem produtos no carrinho",
+      confirmButtonColor:  "#006437",
+      background: "#f7f7f7",
+      width:"20%",
+     });
+  
 
   }
   else if (totalAmount !== "0,00" && user.textContent !== "") {
-    alert(
-      `
-      Obrigado pela sua compra!
-      Valor do pedido: R$${totalAmount}\n
-      Volte sempre :)
-    `
-    )
-
+    
+      Swal.fire({
+        icon:"success",
+        title: "Obrigado pela sua compra",
+        text:"Valor do pedido " +`R$${totalAmount}`,
+        confirmButtonColor:  "#006437",
+        background: "#f7f7f7",
+        width:"20%",
+       }).then((result)=>{
+        if(result.isConfirmed){
+          updateTotal();
+          itensCarrinho.textContent = "";
+        }
+       });
+     
+   
     document.querySelector(".cart-table tbody").innerHTML = ""// apos efetuar compra limpa dados carrinho
-    updateTotal()
-    itensCarrinho.textContent = "";
+    
+    
   }
 }
 
@@ -261,9 +283,6 @@ function updateTotal() {
   document.querySelector(".cart-total-container span").innerText = "R$" + totalAmount
   // selecionando o elemento com o querySelector, usamos o innerText para acessar o valor e fazemos a concatenação do R$ com a quantia final
 }
-
-
-
 
   const sms = document.getElementsByClassName("btn-add-carrinho");
   const itensCarrinho = document.getElementById("itens-carrinho");

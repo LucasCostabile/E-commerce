@@ -10,6 +10,10 @@ const btn_fecharCadastro = document.getElementById("btn_fecharCadastro");
 const erroCadastro = document.getElementById("erroCadastro");
 const user = document.getElementById("user");
 const usuariosArmazenados = JSON.parse(localStorage.getItem("usuariosLocalstorage"));
+if (user.textContent == ""){
+  btn_FazerCadastro.style.display = "block";
+
+}
 
 class Usuario {
   constructor(CPF, nome, e_mail, senha) {
@@ -18,6 +22,7 @@ class Usuario {
     this.e_mail = e_mail;
     this.senha = senha;
   }
+
   cadastrarUsuario() {
     btn_EnviarCadastro.addEventListener('click', () => {
       let usuario = this.lerDados();
@@ -28,7 +33,6 @@ class Usuario {
         }
 
         armazenaLocal("usuariosLocalstorage", listaUsuarios);
-
         setTimeout(() => {
           modal_Cadastro.style.display = "none";
           erroCadastro.textContent = "";
@@ -67,35 +71,58 @@ class Usuario {
       const inp_EmailLogin = document.getElementById("inp_EmailLogin").value;
       const inp_EmailSenha = document.getElementById("inp_EmailSenha").value;
       let usuarioLS = JSON.parse(localStorage.getItem("usuariosLocalstorage"))
-
       if (!usuarioLS || usuarioLS.length === 0) {
         setTimeout(() => {
-          modal_Cadastro.style.display = "flex";
-          modal_Login.style.display = "none";
           lbl_mensagemLogin.textContent = "";
 
-        }, 1500)
-        lbl_mensagemLogin.textContent = "Usuário não Cadastrado";
+        }, 3000)
+        lbl_mensagemLogin.textContent = "Senha Inválida ou Usuário não Cadastrado";
+        btn_FazerCadastro.style.display = "block";
       }
 
-      let usuarioEncontrado = false;
-      usuarioLS.forEach((usuario) => {
-        if (inp_EmailLogin === usuario.e_mail && inp_EmailSenha === usuario.senha) {
-          usuarioEncontrado = true;
-          lbl_mensagemLogin.textContent = "Usuário logado";
-          user.textContent = "Bem vindo! " + usuario.nome;
+      if (usuarioLS && usuarioLS.some) {
+        const usuarioEncontrado = usuarioLS.find((usuario) => {
+          return inp_EmailLogin === usuario.e_mail && inp_EmailSenha === usuario.senha;
+        });
+
+        if (usuarioEncontrado) {
+          setTimeout(() => {
+            modal_Login.style.display = "none";
+            const limpaForm = document.querySelector(".tela-login-modal");
+            limpaForm.querySelectorAll("input").forEach((campo) => {
+              campo.value = "";
+              lbl_mensagemLogin.textContent = "";
+              btn_FazerCadastro.style.display = "none";
+              user.textContent = "Bem vindo! " + usuarioEncontrado.nome;
+            });
+          }, 1500);
+
+          lbl_mensagemLogin.textContent = "Autenticando...";
+        } else {
+          setTimeout(() => {
+            lbl_mensagemLogin.textContent = "";
+
+          }, 3000)
+          lbl_mensagemLogin.textContent = "Senha Inválida ou Usuário não Cadastrado";
+          btn_FazerCadastro.style.display = "block";
+
+
         }
-      });
-      if (usuarioEncontrado == false) {
-        lbl_mensagemLogin.textContent = "Usuário Não Encontrado";
+
+
       }
+
+
     }
   }
+
 }
 
 btn_FazerCadastro.onclick = () => {
   modal_Cadastro.style.display = "flex";
   modal_Login.style.display = "none";
+  btn_FazerCadastro.style.display = "none";
+  lbl_mensagemLogin.textContent = "";
 
 }
 
@@ -107,11 +134,13 @@ btn_Entrar.onclick = () => {
 btn_fecharCadastro.onclick = () => {
   modal_Login.style.display = "none"
   modal_Cadastro.style.display = "none";
+  btn_FazerCadastro.style.display = "none";
 }
 btn_FecharTelaLogin.onclick = () => {
   modal_Login.style.display = "none";
   modal_Cadastro.style.display = "none";
   lbl_mensagemLogin.textContent = "";
+  btn_FazerCadastro.style.display = "none";
   const limpaForm = document.querySelector(".tela-login-modal");
   limpaForm.querySelectorAll("input").forEach((campo) => {
     campo.value = "";

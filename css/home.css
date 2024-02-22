@@ -100,7 +100,7 @@ li {
     position: absolute;
     display: none;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: start;
     align-items: center;
     gap: 8px;
     text-align: center;
@@ -109,7 +109,7 @@ li {
     border: outset #006437 3px;
     width: 15%;
     min-width: 300px;
-    min-height: 230px;
+    height: 260px;
     border-radius: 8px;
 
 
@@ -127,11 +127,15 @@ li {
 
 
     .abrir-cadastro-usuario {
+        width: 100%;
+        height: 80px;
+       
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: end;
         align-items: center;
-        gap: 20px;
+        gap: 10px;
+        padding-bottom: 5px;
     }
 }
 
